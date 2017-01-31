@@ -1,0 +1,247 @@
+This is e-pTeX, Version 3.14159265-p3.6-141210-2.6 (utf8.euc) (TeX Live 2015) (preloaded format=platex 2015.9.9)  30 JAN 2017 17:56
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**NJP_main
+(./NJP_main.tex
+pLaTeX2e <2006/11/10> (based on LaTeX2e <2015/01/01> patch level 0)
+Babel <3.9l> and hyphenation patterns for 79 languages loaded.
+(./iopart.cls
+Document Class: iopart 1996/06/10 v0.0 IOP Journals LaTeX article class
+(./iopart12.clo
+File: iopart12.clo 1997/01/15 v1.0 LaTeX2e file (size option)
+)
+\c@jnl=\count81
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@subparagraph=\count86
+\c@figure=\count87
+\c@table=\count88
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\indentedwidth=\skip43
+\mathindent=\dimen118
+\c@eqnval=\count89
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: dvipdfmx.def on input line 94.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/dvipdfmx-def/dvipdfmx.def
+File: dvipdfmx.def 2015/03/26 v4.04 LaTeX color/graphics driver for dvipdfmx (T
+eX Live/ChoF)
+))
+\Gin@req@height=\dimen119
+\Gin@req@width=\dimen120
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/afterpage.sty
+Package: afterpage 2014/10/28 v1.08 After-Page Package (DPC)
+\AP@output=\toks16
+\AP@partial=\box41
+\AP@footins=\box42
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/braket/braket.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/comment/comment.sty
+\CommentStream=\write3
+
+Excluding comment 'comment') (./NJP_main.aux (./NJPsec2.aux) (./NJPsec3.aux)
+(./NJPsec4.aux) (./NJPsec5.aux) (./NJPsec6.aux))
+\openout1 = `NJP_main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <17.28> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 12.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <17.28> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 12.
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <12> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 13.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <12> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 13.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 13.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 13.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 13.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 14.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 14.
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 21.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 21.
+ [1
+
+]
+\openout2 = `NJPsec1.aux'.
+
+ (./NJPsec1.tex)
+
+LaTeX Font Warning: Font shape `JT1/mc/m/it' undefined
+(Font)              using `JT1/mc/m/n' instead on input line 25.
+
+
+LaTeX Font Warning: Font shape `JY1/mc/m/it' undefined
+(Font)              using `JY1/mc/m/n' instead on input line 25.
+
+[2
+
+]
+\openout2 = `NJPsec2.aux'.
+
+ (./NJPsec2.tex
+
+LaTeX Warning: Citation `experiment?' on page 3 undefined on input line 6.
+
+File: j_c.eps Graphic file (type eps)
+<j_c.eps>
+File: system_image.eps Graphic file (type eps)
+ <system_image.eps> [3
+
+
+] [4]) [5]
+\openout2 = `NJPsec3.aux'.
+
+ (./NJPsec3.tex [6
+
+
+] [7]
+File: mechanism.eps Graphic file (type eps)
+
+<mechanism.eps>) [8]
+\openout2 = `NJPsec4.aux'.
+
+ (./NJPsec4.tex
+
+LaTeX Warning: Reference `hamiltonian' on page 9 undefined on input line 5.
+
+
+Overfull \hbox (45.8937pt too wide) in alignment at lines 22--27
+ [] [] [] [] 
+ []
+
+
+Overfull \hbox (9.33311pt too wide) in alignment at lines 30--34
+ [] [] [] [] 
+ []
+
+[9
+
+
+]
+File: ising_model.eps Graphic file (type eps)
+ <ising_model.eps> [10]) [11]
+\openout2 = `NJPsec5.aux'.
+
+ (./NJPsec5.tex
+File: conductance_s2.0.eps Graphic file (type eps)
+ <conductance_s2.0.eps>
+Overfull \hbox (23.0705pt too wide) in paragraph at lines 6--8
+ [] 
+ []
+
+File: conductance_s1.5.eps Graphic file (type eps)
+<conductance_s1.5.eps>
+Overfull \hbox (23.0705pt too wide) in paragraph at lines 13--15
+ [] 
+ []
+
+File: conductance_s1.5_alpha1.0.eps Graphic file (type eps)
+<conductance_s1.5_alpha1.0.eps>
+File: conductance_s1.eps Graphic file (type eps)
+ <conductance_s1.eps>
+Overfull \hbox (23.0705pt too wide) in paragraph at lines 27--29
+ [] 
+ []
+
+File: ohmic_incoherent_tunneling.eps Graphic file (type eps)
+<ohmic_incoherent_tunneling.eps>
+File: conductance_s0.9.eps Graphic file (type eps)
+ <conductance_s0.9.eps>
+Overfull \hbox (23.0705pt too wide) in paragraph at lines 43--45
+ [] 
+ []
+
+[12
+
+
+]
+File: localization_phasediagram.eps Graphic file (type eps)
+ <localization_phasediagram.eps>
+Overfull \hbox (23.0705pt too wide) in paragraph at lines 50--52
+ [] 
+ []
+
+File: sub_ohmic_phasediagram.eps Graphic file (type eps)
+<sub_ohmic_phasediagram.eps>) [13] [14] [15]
+\openout2 = `NJPsec6.aux'.
+
+ (./NJPsec6.tex) [16
+
+
+]
+
+LaTeX Font Warning: Font shape `JT1/gt/m/it' undefined
+(Font)              using `JT1/gt/m/n' instead on input line 41.
+
+
+LaTeX Font Warning: Font shape `JY1/gt/m/it' undefined
+(Font)              using `JY1/gt/m/n' instead on input line 41.
+
+[17
+
+] (./NJP_main.aux (./NJPsec1.aux) (./NJPsec2.aux) (./NJPsec3.aux)
+(./NJPsec4.aux) (./NJPsec5.aux) (./NJPsec6.aux))
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 1070 strings out of 493777
+ 11362 string characters out of 6151335
+ 83207 words of memory out of 5000000
+ 4545 multiletter control sequences out of 15000+600000
+ 14664 words of font info for 55 fonts, out of 8000000 for 9000
+ 929 hyphenation exceptions out of 8191
+ 25i,10n,21p,591b,502s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on NJP_main.dvi (17 pages, 36348 bytes).
