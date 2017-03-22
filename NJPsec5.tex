@@ -1,61 +1,286 @@
 \section{Numerical result}
-%==================================================
-\subsection{Super ohmic}
-The results for s=2.0
-\begin{figure}[tb]
-　\centering
-　\includegraphics[width=165mm]{conductance_s2.0.eps}
-　\caption{}
-\end{figure}
 
-The results for s=1.5
-\begin{figure}[tb]
-　\centering
-　\includegraphics[width=165mm]{conductance_s1.5.eps}
-　\caption{}
-\end{figure}
-
-\begin{figure}[tb]
-　\centering
-　\includegraphics[width=100mm]{conductance_s1.5_alpha1.0.eps}
-　\caption{}
-\end{figure}
+本章では、量子モンテカルロ法による数値計算の結果を示す。
+まず、第\ref{sec:conductance}節において、一般の散逸における熱コンダクタンスの温度依存性を示し、どのようなトンネル過程が支配的となるかを近似解と比較することで具体的に調べる。
+その後、第\ref{sec:phasetransition}節で、断熱くりこみの理論から示唆されるサブオーミック散逸における局在転移に関する計算結果を示す。
+本章では$\omega_c=1$とし、すべてのエネルギースケールおよび温度スケールを$\omega_c$を単位として記述する。
 %==================================================
-\subsection{Ohmic}
-The results for s=1
+\subsection{Thermal conductance}
+\label{sec:conductance}
+
+\subsubsection{Ohmic case}
+
+オーミック散逸($s=1$)の熱コンダクタンスの温度依存性はすでに先行研究\cite{SaitoKato13}によって得られている(図\ref{fig:ohmic_result}参照)。オーミック散逸では$\Delta/\omega_c \ll 1$であれば、近藤模型と同様にエネルギーを$\Delta_{\rm eff}$でスケールすることによって、熱コンダクタンスが1つのユニバーサルな温度依存性を示すことが知られている。具体的には温度を$\Delta_{\rm eff}$によって規格化し、熱コンダクタンスを次元解析から$\Delta_{\rm eff}$で割って規格化すると、同一の曲線に乗ることがわかる(図\ref{fig:ohmic_result}参照)。
+
+簡単にオーミック散逸におけるトンネル機構をまとめる。まず、散逸強度が$0<\alpha<1$の範囲にあるときは、低温において$T^3$に比例する熱コンダクタンスが得られる。これはcotunneling過程による解析解の温度依存性と一致する。一方、任意の散逸強度で高温において$T^{2\alpha -1}$に比例する熱コンダクタンスが得られる。これはincoherent tunneling過程による解析解の温度依存性と一致する。また、 散逸強度$\alpha$が小さいときは、中間温度領域でsequential tunneling過程の温度依存性に近い振る舞いが得られる。
+
 \begin{figure}[tb]
 　\centering
 　\includegraphics[width=165mm]{conductance_s1.eps}
-　\caption{}
+　\caption{
+	(a)オーミック散逸における熱コンダクタンスの温度依存性、(b)クロスオーバー温度$T_c$と結合定数$\alpha$の関係($\Delta=0.01$)。
+		(a)では、グラフは両対数スケールとしており、データ点は量子モンテカルロ法による計算結果で、各データはボトムからトップまでそれぞれ$\alpha=10^{-4}(\rm{bottom}), 10^{-3},10^{-2},10^{-1}(\rm{top})$に対応している。ただし、$\Delta=0.001$については$\alpha=0.1$のみの計算結果である。紫色の実線が$\Delta=0.1$におけるcotunneling機構の式(\ref{cond_lowtemp})を$\alpha$で除した近似曲線、緑色の実線は$\Delta=0.01$におけるsequential tunneling機構の式(\ref{compare_ruokola2})を$\alpha$で除した近似曲線である。量子モンテカルロ計算においては、$5\times10^4$熱化ステップ、$25\times10^5$モンテカルロステップで計算を行った。(b)では、データ点は式(\ref{cond_lowtemp})と式(\ref{compare_ruokola2})の近似曲線の交点を求めることで計算したcotunnelingからsequential tunnelingへのクロスオーバー温度$T_c$であり、実線は解析的に求めた$T_c$と$\alpha$の関係を表す。
+	}
+	\label{fig:conductance_s1}
 \end{figure}
 
-$\alpha\geq1$
+より詳しく温度依存性を調べるために、ここではまず散逸強度$\alpha$が小さい場合を議論する。
+図\ref{fig:conductance_s1}~(a)にオーミック散逸($\alpha = 10^{-4}, 10^{-3}, 10^{-2}, 10^{-1}$)における熱コンダクタンスの
+温度依存性の計算結果を示す。ここでは逆温度$\beta$($=N$)は$\beta=64$から$\beta=8192$までとり、広い温度領域で
+精度良く計算を行うために量子トンネル振幅を$\Delta/\omega_c=10^{-3},10^{-2},10^{-1}$とした。このグラフでは
+熱コンダクタンス$\kappa$を、$\Delta_{\rm eff}/k_{\rm B}$だけでなく$\alpha$でも割っている。
+これは、sequential tunneling機構による熱輸送が行われている時、計算データが同一曲線に乗るようにするためである。
+図\ref{fig:conductance_s1}(a)のグラフから明らかなように、温度の上昇に伴い熱コンダクタンスがcotunneling機構による
+温度依存性からsequential tunneling機構による温度依存性へとクロスオーバーしている様子がみてとれる。
+また両者の機構の近似解と数値計算結果はよく一致していることがわかる。
+
+次にcotunnelingからsequential tunnelingへのクロスオーバー温度$T_c$を見積もるため、$\Delta=0.1$において、sequential tunneling機構による
+解析解(\ref{compare_ruokola2})(図\ref{fig:conductance_s1}(a)の緑色の曲線)と、$\alpha$の値を変化させた時のcotunneling機構による解析解(\ref{cond_lowtemp})(図\ref{fig:conductance_s1}(a)の紫色の曲線)の交点を数値的に決めた。
+ただし、cotunneling機構の解析解(\ref{cond_lowtemp})中の帯磁率$\chi_m$は数値計算による結果を用いた。
+その結果を図\ref{fig:conductance_s1}~(b)のデータ点に示す。クロスオーバー温度$T_c$より低温側がcotunneling領域、
+高温側がsequential tunneling領域である。また、摂動論による近似計算では、解析解
+(\ref{cond_lowtemp})の表式において$\chi_m$を$2/\Delta$とした結果が得られ、クロスオーバー温度$T_c$は
+\begin{eqnarray}
+T_c^5\sinh\left(\frac{\Delta}{T_c}\right)= \frac{\Delta^5}{4\alpha F(1)}
+\end{eqnarray}
+を数値的に解くことで得られる。ここで、$F(1)$は式(\ref{cond_lowtemp})の$F(s=1)$を意味する。
+この結果を図\ref{fig:conductance_s1}~(b)の実線に示す。摂動論による結果は$\alpha=0.01$程度までは、
+帯磁率を数値計算したものとよく一致しているが、$\alpha$がそれ以上大きくなるとずれてくることがわかる。
+
+最後に$\alpha\geq1$での熱コンダクタンスを議論する。この領域では$T_K=0$となるため、
+有限温度でcotunneling機構は発現しない。また、量子力学的な重ね合わせ状態は完全に破壊されてしまっているので、
+sequential tunneling機構も働かず、すべての温度領域でincoherent tunnelingによる熱輸送が生じることがわかる。
+図\ref{fig:ohmic_incoherent_tunneling}に$\alpha=1, 1.25, 1.5, 1.75, 2.0$のときの熱コンダクタンスの温度依存性を示す。
+データ点はモンテカルロ計算の結果を表し、実線はincoherent tunnelingの解析解(\ref{ohmic_incoherent})を示す。ただし、式(\ref{ohmic_incoherent})をそのまま用いるとデータ点との
+ずれが生じるため、$\omega_c$を$2\omega_c$と取り直している。この違いは、もとのスピン・ボゾン模型を
+イジング模型にマップする際に生じるものであると考えられる。実際、この違いはただ単に$T_K$の大きさを少し
+変えるだけの効果を持ち、図\ref{fig:ohmic_result}のようなスケーリング曲線(エネルギーを$T_K$で規格化したときに
+得られる曲線)に直したときは違いが現れない。
+
 \begin{figure}[tb]
 　\centering
 　\includegraphics[width=80mm]{ohmic_incoherent_tunneling.eps}
-　\caption{}
+　\caption{
+	$\alpha\geq1$におけるオーミック散逸の熱コンダクタンスの温度依存性。各データはトップから	ボトムまでそれぞれ$\alpha=1.0(\rm top),1.25,1.5,1.75,2.0(\rm bottom)$に対応している。実線は	incoherent tunnelingの近似曲線(\ref{ohmic_incoherent})である。
+   }
+   \label{fig:ohmic_incoherent_tunneling}
 \end{figure}
 
 %==================================================
-\subsection{Sub ohmic}
-The results for s=0.9
-\begin{figure}[tb]
-　\centering
-　\includegraphics[width=165mm]{conductance_s0.9.eps}
-　\caption{}
-\end{figure}
+\subsubsection{Super ohmic case}
 
-The results for s=0.6
-\begin{figure}[tb]
-　\centering
-　\includegraphics[width=165mm]{localization_phasediagram.eps}
-　\caption{}
-\end{figure}
-
+スーパーオーミック散逸($s>1$)は散逸の効果は弱く、常に式(\ref{super_ohmic_kurikomi})で与えられるような
+有効相互作用$\Delta_{\rm eff}$を定義できる。ここでは$s=2.0$および$s=1.5$のスーパーオーミック散逸における
+熱コンダクタンスの温度依存性を議論する。
 
 \begin{figure}[tb]
-　\centering
-　\includegraphics[width=100mm]{sub_ohmic_phasediagram.eps}
-　\caption{}
+	\centering
+	\includegraphics[height=5.7cm]{conductance_s2.0.eps}
+	\caption{
+	$s=2.0$のスーパーオーミック散逸における熱コンダクタンスの温度依存性: (a) $\alpha=0.1$、(b) $\alpha=0.3$。
+	両対数スケールとしており、データ点は量子モンテカルロ法による計算結果、
+	黄色の実線が$\Delta_{\mathrm{eff}}=0.1$におけるcotunneling機構の近似曲線(\ref{cond_lowtemp})、水色と橙色の実線はそれぞれ$\Delta_{\mathrm{eff}}=0.1,\ 0.01$におけるsequential tunneling機構の近似曲線(\ref{compare_ruokola2})である。
+		量子モンテカルロ計算においては、$10^6$熱化ステップ、$5\times10^7$モンテカルロステップで計算を行った。
+	}
+	\label{fig:conductance_s2.0}
 \end{figure}
+
+まず、$s=2.0$のときの熱コンダクタンスの温度依存性を議論する。結合定数$\alpha=0.1$, $0.3$とした場合の結果を
+図\ref{fig:conductance_s2.0}の(a)と(b)にそれぞれ示す。
+ここで、$s$を変化させたときに次元を保つため、縦軸を$\Delta_{\mathrm{eff}}^{2s-1}$で割っている。
+データ点はモンテカルロ計算の結果を表し、高温側の実線はsequential tunneling機構の式(\ref{compare_ruokola2})、低温側の実線は
+cotunneling機構の式(\ref{cond_lowtemp})を表す。低温側ではcotunneling機構による熱輸送によってよく説明されるのに対し、
+高温側ではsequential tunneling機構による熱輸送によってよく説明されることがわかる。
+また同時に、式(\ref{shiba})の一般化斯波関係式がスーパーオーミック散逸の低温領域で確かに成り立つことも、
+この計算によって示唆される。
+$s=2.0$のスーパーオーミック散逸では量子力学的な重ね合わせ状態を破壊することはないため、
+incoherent tunneling機構の熱輸送は生じない。これらの特徴は$s>2$のスーパーオーミック散逸でも同様に
+成り立つと期待される。
+
+\begin{figure}[tb]
+	\centering
+	\includegraphics[height=6.0cm]{conductance_s1.5.eps}
+	\caption{
+	$s=1.5$のスーパーオーミック散逸における熱コンダクタンスの温度依存性: (a) $\alpha=0.1$、(b) $\alpha=0.3$。
+	両対数スケールとしており、データ点は量子モンテカルロ法による計算結果、
+	水色の実線が$\Delta=0.1$におけるcotunneling機構の近似曲線(\ref{cond_lowtemp})、橙色と黄色の実線はそれぞれ$\Delta=0.1,\ 0.01$におけるsequential tunneling機構の近似曲線(\ref{compare_ruokola2})である。量子モンテカルロ計算においては、$10^6$熱化ステップ、$5\times10^7$モンテカルロステップで計算を行った。
+	}
+	\label{fig:conductance_s1.5}
+\end{figure}
+
+一方、$1<s<2$のスーパーオーミック散逸では、高温で重ね合わせ状態が破壊される場合がある。
+それを具体的に見るために、$s=1.5$のスーパーオーミック散逸における熱コンダクタンスの温度依存性を議論する。
+まず、熱浴との結合強度を比較的小さな値である$\alpha=0.1$, $0.3$とした場合の結果を、
+図\ref{fig:conductance_s1.5}の(a)および(b)に示す。
+データ点はモンテカルロ計算の結果を表し、高温側の実線はsequential tunneling機構の式(\ref{compare_ruokola2})、低温側の実線は
+cotunneling機構の式(\ref{cond_lowtemp})を表す。
+$s=2$の場合と同様に、低温側ではcotunneling機構による熱輸送が、
+高温側ではsequential tunneling機構による熱輸送が実現されている。
+
+\begin{figure}[tb]
+	\centering
+	\includegraphics[height=6cm]{conductance_s1.5_alpha1.0.eps}
+	\caption{
+	$s=1.5,\alpha=1.0$のスーパーオーミック散逸における熱コンダクタンスの温度依存性。
+	両対数スケールとしており、データ点は量子モンテカルロ法による計算結果、
+	橙色の実線が$\Delta=0.1$におけるcotunneling機構の近似曲線(\ref{cond_lowtemp})、黄色と青色の実線はそれぞれ$\Delta=0.01,\ 0.005$におけるsequential tunneling機構の近似曲線(\ref{compare_ruokola2})である。
+	量子モンテカルロ計算においては、$10^6$熱化ステップ、$5\times10^7$モンテカルロステップで計算を行った。
+	}
+	\label{fig:conductance_s1.5_alpha1.0}
+\end{figure}
+
+さらに熱浴との結合強度を$\alpha=1.0$とした結果を図\ref{fig:conductance_s1.5_alpha1.0}に示す。
+この場合は、低温ではcotunnelingの近似解とよく合っているが、$T/\Delta_{\rm eff}$が$1$よりも大きくなるにつれて、
+sequential tunnelingの表式からデータ点が乖離していく様子がわかる。これは温度ゆらぎによって
+incoherent tunnelingが起こっているからと予想される。しかし、$1<s\leq2$ではフェルミの黄金律から
+求まるトンネル確率$\Gamma$の式(\ref{Gamma})の指数部分$Q(t)$に特異点が現れ\cite{Weiss12}、$\Gamma$を容易に
+導出することはできないため、本研究ではこの領域の熱コンダクタンスの近似解は導出しなかった。
+ただし、別の角度からこの予想の妥当性を確かめることは可能である。
+量子モンテカルロ法で計算した応答スペクトル関数$S(\omega)$(図\ref{fig:spect_delta0.01_alpha1.0})を見ると、
+$N=512$ではデルタ関数で近似できるような$\omega=\pm \Delta_{\rm eff}$近傍に鋭い２つのピークを持つ関数になっているが、
+$N$の減少に伴い徐々にピークが鈍くなり$N=64$ではLorentz型の関数となっている。
+これは、第3章の議論を踏まえると、熱輸送機構がsequential tunnelingからincoherent tunnelingへとクロスオーバーしていることを意味する。
+
+\begin{figure}[tb]
+	\centering
+	\includegraphics[height=6cm]{spect_delta0.01_alpha1.0.eps}
+	\caption{
+	$s=1.5,\alpha=1.0,\Delta=0.01$における応答スペクトル関数。
+	縦軸は応答スペクトル関数$S(\omega)$を$\omega=0$におけるスペクトル関数の値$S_0$で割っている。温度の上昇($N$の減少)に伴いデルタ関数型のダブルピークからLorentz型のシングルピーク関数へのクロスオーバーが起こる。
+	}
+	\label{fig:spect_delta0.01_alpha1.0}
+\end{figure}
+
 %==================================================
+\subsubsection{Sub ohmic case}
+
+\begin{figure}[tb]
+	\centering
+	\includegraphics[height=6.0cm]{conductance_s0.9.eps}
+	\caption{
+	(a)$s=0.9$のサブオーミック散逸における熱コンダクタンスの温度依存性:(a)$\alpha=0.1$、(b)$\alpha=0.3$。
+	両対数スケールとしており、データ点は量子モンテカルロ法による計算結果、
+	水色の実線が$\Delta=0.1$におけるcotunneling機構の近似曲線(\ref{cond_lowtemp})、橙色の実線は$\Delta=0.01$におけるincoherent tunneling機構の近似曲線(\ref{sub_ohmic_hightemp})である。
+	量子モンテカルロ計算においては、$10^6$熱化ステップ、$5\times10^7$モンテカルロステップで計算を行った。
+	}
+	\label{fig:conductance_s0.9}
+\end{figure}
+
+次にサブオーミック散逸における熱輸送を議論する。一般にサブオーミック散逸では$s$が小さくなるとイジング模型の
+長距離相互作用が大きくなるため、Wolff法で形成されるクラスターサイズも非常に大きくなり、
+結果として低温領域でモンテカルロ法の状態更新に膨大な時間を費やす。
+そこで、$s$の値として極端に小さくない値$s=0.9$をまず調べる。
+熱浴との結合強度を$\alpha=0.1$および0.3とした場合の結果を図\ref{fig:conductance_s0.9}に示す。
+データ点はモンテカルロ計算の結果を表し、高温側の実線はincoherent tunneling機構の式(\ref{sub_ohmic_hightemp})、低温側の実線は
+cotunneling機構の式(\ref{cond_lowtemp})を表す。
+
+\begin{figure}[tb]
+	\centering
+	\includegraphics[height=6.0cm]{suceptibility_s0.9_delta0.1_alpha0.1-0.3.eps}
+	\caption{
+		$s=0.9,\Delta=0.1$おける帯磁率の温度依存性: (a)$\alpha=0.1$、(b)$\alpha=0.3$ 。
+	}
+	\label{fig:suceptibility_s0.9_delta0.1_alpha0.1-0.3}
+\end{figure}
+
+まず、低温の熱輸送はcotunnelingによって生じることが図\ref{fig:conductance_s0.9}からみてとれる。
+ただし、cotunneling機構の式(\ref{cond_lowtemp})を用いるにあたっては、
+数値計算で求めた帯磁率$\chi_m$(図\ref{fig:suceptibility_s0.9_delta0.1_alpha0.1-0.3})を利用し、
+式(\ref{cond_lowtemp})の数値積分を二重指数関数型数値積分公式\cite{double_exp}を用いて行った。
+図\ref{fig:suceptibility_s0.9_delta0.1_alpha0.1-0.3}に示されるように、帯磁率$\chi_m$は低温で特異的な温度依存性を
+示しており、図\ref{fig:conductance_s0.9}の低温でのデータ点を合わせるためには、この温度依存性を考慮する必要がある。
+なお、図\ref{fig:suceptibility_s0.9_delta0.1_alpha0.1-0.3}に示される低温における帯磁率$\chi_m$の特異な振る舞いは、
+サブオーミックで生じる量子相転移と何らかの関係があると期待されるが、現時点では理由はわかっていない。
+低温領域では、オーミックやスーパーオーミック散逸で現れるcotunnelingの温度依存性の振る舞い$T^{2s+1}$と比較すると、
+低温での$\chi_m$の温度依存性によって$\kappa$が僅かに抑制されているが、ほぼ$2s+1$のべきに近い振る舞いが得られていることが
+わかる。よって概ね、cotunnelingの$T^{2s+1}$に比例する温度依存性が低温で実現されていると言える。
+
+一方、図\ref{fig:conductance_s0.9}より、高温の熱輸送は式(\ref{sub_ohmic_hightemp})のincoherent tunnelingによる熱輸送が生じていることが
+わかる。サブオーミック散逸では散逸の影響が強いため、sequential tunnelingによる熱輸送は起こらないと考えられる。
+
+数値計算上の議論として、先述の通りサブオーミック散逸では長距離相互作用がスーパーオーミック散逸のときと比べて大きいため、
+低温領域で計算時間が非常に長くなる。これは量子モンテカルロ法の限界であり、本研究でも図\ref{fig:conductance_s0.9}(b)の計算では、
+incoherent tunneling領域で$N=512$が計算可能な上限であった。これより低温を見るには量子モンテカルロ法のアルゴリズムの
+変更などの工夫が必要である。
+
+%==================================================
+\subsection{Phase transition in sub ohmic regime}
+\label{sec:phasetransition}
+
+局在転移とは、温度ゼロ($\beta = N \rightarrow \infty$)において量子力学的な摩擦$\alpha$が臨界摩擦$\alpha_c$を超えると、
+トンネル効果が全く起こらなくなり($\Gamma\rightarrow0$)波動関数が局在化する現象である。
+これを調べるために、次のように定義されるBinderパラメーターを導入する。
+\begin{eqnarray}
+	B\equiv\frac{1}{2}\left(3-\frac{\average{\sigma_z}^4}{\average{\sigma_z^2}^2}\right)
+\end{eqnarray}
+Binderパラメーターは相転移の臨界係数を決めるのに有効な物理量であり、この理由を以下で説明する。
+一般に、ある物理量$A$の平均値$\average{A}$は、有限サイズスケーリング仮説から
+\begin{eqnarray}
+ 	\average{A}(L,T)= L^{x_A/\nu}\tilde{f}_A(L^{1/\nu}t)
+	\label{scaling}
+\end{eqnarray}
+と書ける。ここで、$L$はシステムサイズ、$T$は温度、$t\equiv\left|(T_c-T)/T_c\right|$である。
+また$x_A$および $\nu$はそれぞれ臨界点近傍($T\sim T_c$)において
+ \begin{eqnarray}
+  	\average{A}(\infty,T)&\propto&\left|\frac{T_c-T}{T_c}\right|^{-x_A},\\
+	\xi&\propto&\left|\frac{T_c-T}{T_c}\right|^{-\nu}
+ \end{eqnarray}
+を満たす臨界指数である。
+ここで、もし$x_A=0$となるような物理量$A$を選んだ場合、式(\ref{scaling})は
+\begin{eqnarray}
+ 	\average{A}(L,T)= \tilde{f}_A(L^{1/\nu}t)
+\end{eqnarray}
+と書け、臨界点近傍($t\sim0$)で$\average{A}(L,T)$が$L$に依存しなくなる。
+つまり、システムサイズ$L $を変化させたとき、$L$に依らず定点となる
+温度$T$が 臨界温度$T_c$ということになる。
+そして、Binderパラメーターは$x_A=0$となる物理量なので、本研究ではこの性質を利用して臨界摩擦$\alpha_c$を求める。
+ 
+\begin{figure}[tb]
+	\centering
+	\includegraphics[height=6.0cm]{binder_parameter.eps}
+	\caption{
+	(a)$s=0.6,\ \Delta=0.01$におけるBinderパラメーターの$\alpha$依存性、(b)Binderパラメーターの交点。 (a)の埋め込み図中の×印は$N$と$2N$におけるBinderパラメーターの交点を表す。(b)中の点線はフィッティングで得た零点近傍の漸近線である。
+	}
+	\label{fig:binder_parameter}
+\end{figure}
+
+$s=0.6$, $\Delta=0.01$のサブオーミック散逸において、Binderパラメーターの$\alpha$依存性を調べた結果が
+図\ref{fig:binder_parameter}(a)である。このパラメーターに対して、Binderパラメーターは$\alpha=0.09$付近で交点を持つ。
+拡大図を図\ref{fig:binder_parameter}(a)中の挿入図に示す。ここで、局在転移は$T\rightarrow0(N\rightarrow\infty)$で起こるので、
+$N$と$2N$におけるBinderパラメーターの交点を$\alpha_{N,2N}$とすると、
+$\alpha_{N,2N}$は$N$の増加に伴って臨界摩擦$\alpha_c$に収束するはずである。
+データから$\alpha_{N,2N}$を求め、その$N$依存性を調べたグラフが図\ref{fig:binder_parameter}(b)である。
+$N$を大きくするに従い、$\alpha_{N,2N}$がある値に収束する様子がみてとれる。
+$1/N$の二次関数によって$\alpha_{N,2N}$をフィットし、外挿によって$N\rightarrow\infty$での$\alpha_c$を計算すると、
+図\ref{fig:binder_parameter}(b)の場合は$\alpha_c=0.0825$と求まる。
+
+\begin{figure}[tb]
+	\centering
+	\includegraphics[height=6.0cm]{localization_phasediagram.eps}
+	\caption{
+	(a)$T=0$における局在転移の相図、 (b)$\Delta=0.01$での局在相$(s=0.6,\alpha=0.2)$・非局在相$(s=0.6,\alpha=0.02)$における熱コンダクタンスの温度依存性。
+	水色の実線が$\Delta=0.01,\alpha=0.02$におけるcotunneling機構の近似曲線(\ref{cond_lowtemp})、橙色の実線は$\Delta=0.01,\alpha=0.2$におけるincoherent tunneling機構の近似曲線(\ref{sub_ohmic_hightemp})である。
+	}
+	\label{fig:localization_phasediagram}
+\end{figure}
+
+この手続きを$s<1$を満たす各$s$に対して行った結果、 $\alpha$と$s$についての局在転移の相図が得られる(図\ref{fig:localization_phasediagram}(a))。
+この結果は先行研究の数値くりこみ群による結果\cite{Vojta05}と定量的におおよそ一致している。ここでは相図の中で、
+$\Delta=0.01$に対して局在相を代表する点$(s,\alpha) = (0.6,0.2)$および非局在相を代表する点$(s,\alpha) = (0.6,0.02)$の2点で、
+熱コンダクタンスの温度依存性を示したのが図\ref{fig:localization_phasediagram}(b)である。
+局在相のパラメーター$(s,\alpha) = (0.6,0.2)$ではすべての温度領域でincoherent tunnelingによる熱輸送でよく記述されるのに対し、
+非局在相のパラメーター$(s,\alpha) = (0.6,0.02)$では低温でcotunnelingによる熱輸送が生じていることがわかる。
+ただし、非局在相のパラメーター$(s,\alpha) = (0.6,0.02)$では、高温でincoherent tunnelingによる熱輸送へとクロスオーバーすると期待されるが、
+数値計算の精度の問題により、そこまでの温度領域の計算ができなかった。
+このように、量子相転移によって波動関数が局在すると、cotunneling領域がなくなり、
+熱コンダクタンスの温度依存性が大きく変わることがわかる。最後に、温度$T$と結合強度$\alpha$に関する相図の模式図を
+図\ref{fig:sub_ohmic_phasediagram}にまとめる。
+
+\begin{figure}[tb]
+	\centering
+	\includegraphics[height=7.0cm]{sub_ohmic_phasediagram.eps}
+	\caption{
+	サブオーミック散逸における熱輸送機構の相図。
+	}
+	\label{fig:sub_ohmic_phasediagram}
+\end{figure}
