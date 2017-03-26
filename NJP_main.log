@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.6-141210-2.6 (utf8.euc) (TeX Live 2015) (preloaded format=platex 2015.9.9)  22 MAR 2017 18:02
+This is e-pTeX, Version 3.14159265-p3.6-141210-2.6 (utf8.euc) (TeX Live 2015) (preloaded format=platex 2015.9.9)  23 MAR 2017 15:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -127,11 +127,8 @@ LaTeX Font Warning: Font shape `JY1/mc/m/it' undefined
 \openout2 = `NJPsec2.aux'.
 
  (./NJPsec2.tex
-
-LaTeX Warning: Citation `experiment?' on page 3 undefined on input line 6.
-
 File: j_c.eps Graphic file (type eps)
-<j_c.eps>
+ <j_c.eps>
 File: system_image.eps Graphic file (type eps)
  <system_image.eps> [3
 
@@ -139,50 +136,25 @@ File: system_image.eps Graphic file (type eps)
 ] [4]) [5]
 \openout2 = `NJPsec3.aux'.
 
- (./NJPsec3.tex [6
+ (./NJPsec3.tex
+File: localization.eps Graphic file (type eps)
+
+<localization.eps> [6
 
 
 ]
-
-LaTeX Warning: Citation `SaitoKato13' on page 7 undefined on input line 51.
-
-File: localization.eps Graphic file (type eps)
-<localization.eps>
-
-LaTeX Warning: Citation `Vojta05' on page 7 undefined on input line 70.
-
 File: sequential_tunneling.eps Graphic file (type eps)
-<sequential_tunneling.eps>
-
-LaTeX Warning: Citation `Ruokola11' on page 7 undefined on input line 88.
-
-[7] [8]
-
-LaTeX Warning: Citation `Sassetti90' on page 9 undefined on input line 140.
-
-
-LaTeX Warning: Citation `Tsvelick83' on page 9 undefined on input line 146.
-
-
-LaTeX Warning: Citation `Okiji87' on page 9 undefined on input line 146.
-
-
-LaTeX Warning: Citation `Ruokola11' on page 9 undefined on input line 153.
-
-[9]
+ <sequential_tunneling.eps> [7] [8]
 File: cotunneling.eps Graphic file (type eps)
- <cotunneling.eps> [10]
-
-LaTeX Warning: Citation `Weiss12' on page 11 undefined on input line 240.
-
-[11]
+ <cotunneling.eps>
+[9] [10]
 File: incoherent_tunneling.eps Graphic file (type eps)
- <incoherent_tunneling.eps>) [12]
+ <incoherent_tunneling.eps>) [11]
 \openout2 = `NJPsec4.aux'.
 
  (./NJPsec4.tex
 
-LaTeX Warning: Reference `hamiltonian' on page 13 undefined on input line 5.
+LaTeX Warning: Reference `hamiltonian' on page 12 undefined on input line 5.
 
 
 Overfull \hbox (45.8937pt too wide) in alignment at lines 22--27
@@ -194,24 +166,21 @@ Overfull \hbox (9.33311pt too wide) in alignment at lines 30--34
  [] [] [] [] 
  []
 
-[13
+[12
 
 
 ]
 File: ising_model.eps Graphic file (type eps)
- <ising_model.eps> [14]) [15]
+ <ising_model.eps> [13]) [14]
 \openout2 = `NJPsec5.aux'.
 
  (./NJPsec5.tex
 
-LaTeX Warning: Citation `SaitoKato13' on page 16 undefined on input line 13.
-
-
-LaTeX Warning: Reference `fig:ohmic_result' on page 16 undefined on input line 
+LaTeX Warning: Reference `fig:ohmic_result' on page 15 undefined on input line 
 13.
 
 
-LaTeX Warning: Reference `fig:ohmic_result' on page 16 undefined on input line 
+LaTeX Warning: Reference `fig:ohmic_result' on page 15 undefined on input line 
 13.
 
 File: conductance_s1.eps Graphic file (type eps)
@@ -220,50 +189,46 @@ Overfull \hbox (23.0705pt too wide) in paragraph at lines 18--23
  [] 
  []
 
-[16
+[15
 
 
 ]
 
-LaTeX Warning: Reference `fig:ohmic_result' on page 17 undefined on input line 
+LaTeX Warning: Reference `fig:ohmic_result' on page 16 undefined on input line 
 57.
 
 File: ohmic_incoherent_tunneling.eps Graphic file (type eps)
-<ohmic_incoherent_tunneling.eps> [17]
+<ohmic_incoherent_tunneling.eps> [16]
 File: conductance_s2.0.eps Graphic file (type eps)
- <conductance_s2.0.eps> [18]
+ <conductance_s2.0.eps> [17]
 File: conductance_s1.5.eps Graphic file (type eps)
 
 <conductance_s1.5.eps>
 File: conductance_s1.5_alpha1.0.eps Graphic file (type eps)
  <conductance_s1.5_alpha1.0.eps>
-
-LaTeX Warning: Citation `Weiss12' on page 19 undefined on input line 136.
-
 File: spect_delta0.01_alpha1.0.eps Graphic file (type eps)
-<spect_delta0.01_alpha1.0.eps> [19]
+
+<spect_delta0.01_alpha1.0.eps> [18]
 File: conductance_s0.9.eps Graphic file (type eps)
  <conductance_s0.9.eps>
 File: suceptibility_s0.9_delta0.1_alpha0.1-0.3.eps Graphic file (type eps)
 
-<suceptibility_s0.9_delta0.1_alpha0.1-0.3.eps>
-
-LaTeX Warning: Citation `double_exp' on page 20 undefined on input line 189.
-
-[20] [21]
+<suceptibility_s0.9_delta0.1_alpha0.1-0.3.eps> [19] [20]
 File: binder_parameter.eps Graphic file (type eps)
- <binder_parameter.eps>
+
+<binder_parameter.eps>
 File: localization_phasediagram.eps Graphic file (type eps)
- <localization_phasediagram.eps> [22]
-
-LaTeX Warning: Citation `Vojta05' on page 23 undefined on input line 268.
-
-[23]
+ <localization_phasediagram.eps> [21]
 File: sub_ohmic_phasediagram.eps Graphic file (type eps)
- <sub_ohmic_phasediagram.eps>) [24]
+
+<sub_ohmic_phasediagram.eps>) [22]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [23]
 \openout2 = `NJPsec6.aux'.
 
- (./NJPsec6.tex) [25
+
+(./NJPsec6.tex) [24
 
 
 ]
@@ -275,7 +240,7 @@ LaTeX Font Warning: Font shape `JT1/gt/m/it' undefined
 LaTeX Font Warning: Font shape `JY1/gt/m/it' undefined
 (Font)              using `JY1/gt/m/n' instead on input line 41.
 
-[26
+[25
 
 ] (./NJP_main.aux (./NJPsec1.aux) (./NJPsec2.aux) (./NJPsec3.aux)
 (./NJPsec4.aux) (./NJPsec5.aux) (./NJPsec6.aux))
@@ -290,12 +255,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 1124 strings out of 493777
- 12468 string characters out of 6151335
- 82771 words of memory out of 5000000
- 4591 multiletter control sequences out of 15000+600000
+ 1118 strings out of 493777
+ 12414 string characters out of 6151335
+ 82770 words of memory out of 5000000
+ 4585 multiletter control sequences out of 15000+600000
  14664 words of font info for 55 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  25i,10n,21p,857b,501s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on NJP_main.dvi (26 pages, 94600 bytes).
+Output written on NJP_main.dvi (25 pages, 87884 bytes).
